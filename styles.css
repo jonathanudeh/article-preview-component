@@ -61,6 +61,12 @@ main {
         height: 2rem;
         width: 100%;
         justify-items: end;
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
+
+        @starting-style {
+            opacity: 0;
+        }
        
 
         .avatar {
@@ -82,12 +88,16 @@ main {
             opacity: 60%;
         }
 
-        .share-icon {
+        .share-wrapper {
+            background-color: var(--Light-Grayish-Blue);
+            padding: .5rem;
             border-radius: 50%;
             cursor: pointer;
-            width: 1.5rem;
-            height: 1.5rem;
-            object-fit: contain;
+        }
+
+        .share-icon {
+            width: 1.1rem;
+            height: 1.1rem;
         }
     }
 
@@ -104,6 +114,12 @@ main {
         position: relative;
         top: -2rem;
         left: -1.8rem;
+        opacity: 1;
+        transition: opacity .5s ease-in-out;
+
+        @starting-style {
+            opacity: 0;
+        }
 
         p {
             margin-left: 1.8rem;
@@ -113,25 +129,34 @@ main {
             align-self: center;
         }
 
-        img {
-            width: 1.2rem;
-            height: 1.2rem;
-            margin-right: 1rem;
-        }
-
         .social-media {
           flex: 1;
+          
+            img {
+                width: 1.2rem;
+                height: 1.2rem;
+                margin-right: 1rem;
+                cursor: pointer;
+            }
+
+            img:hover {
+                transform: scale(1.5) rotate(11deg);
+            }
+        }
+
+        .share-wrapper {
+            background-color: var(--Desaturated-Dark-Blue);
+            border-radius: 50%;
+            margin: 0 2rem;
+            cursor: pointer;
+            padding: .2rem;
         }
 
         .share-icon {
-            box-sizing: border-box;
             border-radius: 50%;
-            width: 1.5rem;
-            height: 1.5rem;
-            cursor: pointer;
-            margin-right: 30px;
-            margin-bottom: 10px;
-            fill: var(--Light-Grayish-Blue);
+            filter: brightness(100);
+            width: 1.1rem;
+            height: 1.1rem;
         }
     }
 }
@@ -159,14 +184,16 @@ main {
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            
 
             .avatar-container {
                 display: flex;
 
+                .share-wrapper {
+                    cursor: pointer;
+                }
+
                 .share-icon {
-                    width: 2rem;
-                    height: 2rem;
+                    
                 }
             }
 
@@ -179,8 +206,6 @@ main {
                 font-size: 0.8rem;
                 font-weight: 500;
             }
-
-            
         }
 
         
@@ -188,8 +213,14 @@ main {
             position: absolute;
             max-width: 15rem;
             border-radius: 1rem;
+            transition: opacity .5s ease-in-out;
+            opacity: 1;
 
-            .share-icon {
+            @starting-style {
+                opacity: 0;
+            }
+
+            .share-icon, .share-wrapper {
                 display: none;
             }
 
@@ -197,6 +228,23 @@ main {
                 display: flex;
 
             }
+
+            img:hover {
+                transform: scale(1.2) rotate(13deg);
+                cursor: pointer;
+            }
+        }
+
+        #share-icons::after {
+            content: "";
+            display: block;
+            position: relative;
+            border: 15px solid var(--Very-Dark-Grayish-Blue);
+            border-bottom-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            top: 2.5rem;
+            left: -5.5rem;
         }
 
         .pointer {
@@ -209,7 +257,6 @@ main {
             border-left: 10px solid transparent;
             border-right: 10px solid transparent;
             border-top: 10px solid var(--Very-Dark-Grayish-Blue);
-          
         }
     }
 }
