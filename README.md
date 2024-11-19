@@ -1,10 +1,10 @@
 # Frontend Mentor - Article Preview Component Master
 
 ## Overview
-This project was all about designing a page consisting of four cards that looks different on both mobile and desktop view
+This project was about desinging a page and making it interactive with Javascript.
 
 ### Links
-Live Site URL: Live site
+- Live Site URL: [Live site](https://jonathanudeh.github.io/article-preview-component/)
 
 ### My-process
 - Built-with
